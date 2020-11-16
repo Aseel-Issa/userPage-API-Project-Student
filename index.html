@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-container"></div>
+        <div class="quote-container"></div>
+        <div class="content-container">
+            <div class="pokemon-container"></div>
+            <div class="meat-container"></div>
+        </div>
+        <div class="friends">
+            <h4>Friends</h4>
+            <div class="friends-container">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="load">Load User Data</button>
+            <button id="display">Display User</button>
+            <button id="saveUser">Save User</button>
+            <button id="loadUser">Display Saved User</button>
+            <select id="userSelector"></select>
+        </div>
+    </div>
+
+    <script id="firends-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each friends}}
+            <li>{{firstName}} {{lastName}}</li>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script id="about-template" type="text/x-handlebars-template">
+        <p>{{meat}}</p>
+    </script>
+
+    <script id="quote-template" type="text/x-handlebars-template">
+        <p>{{text}}</p>
+    </script>
+
+    <script id="pokemon-template" type="text/x-handlebars-template">
+        <img id="pokemon-image" src="{{picture}}">
+        <p id="pokemon-text">{{capitalizeFirst name}}</p>
+    </script>
+
+    <script id="user-template" type="text/x-handlebars-template">
+        <img id="profile-pic" src="{{picture.medium}}">
+        <p class="user-info">{{firstName}} {{lastName}}</p>
+        <p class="user-info">{{city}}, {{state}}</p>
+    </script>
+
+    <script id="selector-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <option data-id="{{id}}" class="option">{{firstName}} {{lastName}}</option>
+        {{/each}}
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="API.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
