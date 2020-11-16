@@ -42,4 +42,13 @@ class Renderer {
         const newHTML = template(quote);
         $('.quote-container').append(newHTML);
     }
+
+    renderUserSelector(data){
+        $('#userSelector').empty()
+        const source = $('#selector-template').html();
+        const template = Handlebars.compile(source);
+        const newHTML = template({data});
+        $('#userSelector').append(newHTML);
+
+    }
 }

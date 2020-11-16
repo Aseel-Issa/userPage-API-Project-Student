@@ -28,6 +28,9 @@
         <div class="buttons">
             <button id="load">Load User Data</button>
             <button id="display">Display User</button>
+            <button id="saveUser">Save User</button>
+            <button id="loadUser">Display Saved User</button>
+            <select id="userSelector"></select>
         </div>
     </div>
 
@@ -49,13 +52,19 @@
 
     <script id="pokemon-template" type="text/x-handlebars-template">
         <img id="pokemon-image" src="{{picture}}">
-        <p id="pokemon-text">{{name}}</p>
+        <p id="pokemon-text">{{capitalizeFirst name}}</p>
     </script>
 
     <script id="user-template" type="text/x-handlebars-template">
         <img id="profile-pic" src="{{picture.medium}}">
         <p class="user-info">{{firstName}} {{lastName}}</p>
         <p class="user-info">{{city}}, {{state}}</p>
+    </script>
+
+    <script id="selector-template" type="text/x-handlebars-template">
+        {{#each data}}
+        <option data-id="{{id}}" class="option">{{firstName}} {{lastName}}</option>
+        {{/each}}
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
